@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_learning/prefs.dart';
+import 'package:my_learning/styled_body_text.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -12,7 +13,7 @@ class Home extends StatelessWidget {
           'My learning app',
           style: (TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
         ),
-        backgroundColor: Colors.green[700],
+        backgroundColor: Colors.green[900],
         centerTitle: true,
       ),
       body: Column(
@@ -21,7 +22,7 @@ class Home extends StatelessWidget {
           Container(
             color: Colors.green[200],
             padding: const EdgeInsets.all(20),
-            child: const Text('How I like my Learning ...'),
+            child: const StyleBodyText('How I like my Learning..'),
           ),
           Container(
             color: Colors.green[100],

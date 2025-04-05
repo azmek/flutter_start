@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_learning/styled_body_text.dart';
+import 'package:my_learning/styled_button.dart';
 
 class LearningPrefs extends StatefulWidget {
   const LearningPrefs({super.key});
@@ -29,32 +31,20 @@ class _LearningPrefsState extends State<LearningPrefs> {
       children: [
         Row(
           children: [
-            const Text('Activity: '),
-            Text('$activity'),
-            Image.asset('assets/img/study.png', width: 25),
+            const StyleBodyText('Activity:  '),
+            for (int i = 0; i < activity; i++)
+              Image.asset('assets/img/study.png', width: 25),
             const Expanded(child: SizedBox()),
-            FilledButton(
-              style: FilledButton.styleFrom(
-                backgroundColor: Colors.green,
-                foregroundColor: Colors.yellow,
-              ),
-              onPressed: increaseStrength,
-
-              child: const Text('+'),
-            ),
+            StyledButton(onPressed: increaseStrength, child: const Text('+')),
           ],
         ),
         Row(
           children: [
-            const Text('Focus: '),
-            Text('$focus'),
-            Image.asset('assets/img/target.png', width: 25),
+            const StyleBodyText('Focus: '),
+            for (int i = 0; i < focus; i++)
+              Image.asset('assets/img/target.png', width: 25),
             const Expanded(child: SizedBox()),
-            TextButton(
-              style: TextButton.styleFrom(backgroundColor: Colors.green),
-              onPressed: increaseFocus,
-              child: const Text('+'),
-            ),
+            StyledButton(onPressed: increaseFocus, child: const Text('+')),
           ],
         ),
       ],
